@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John Rodriguez</title>
+<meta name="description" content="John Rodriguez, Industrial Engineer (UCF, Dec 2026). Systems, quality and continuous improvement for space and defense.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="John Rodriguez · Industrial Engineer">
+<meta property="og:description" content="UCF Industrial Engineering, Dec 2026. Systems, operations, reliability, manufacturing and quality engineering for space and defense.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2210%22 fill=%22%23FFC904%22/%3E%3Ctext x=%2232%22 y=%2244%22 font-family=%22Arial Black,Arial%22 font-weight=%22900%22 font-size=%2230%22 text-anchor=%22middle%22 fill=%22%230A0A0A%22%3EJR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<style>
+/* Layout: a night-launch black page in UCF black and gold. A live star field behind the hero, a gold mission timeline down the middle, and a gold contact band to close. Deliberately single-theme. */
+:root {
+  --bg: #0A0A0A;
+  --surface: #141412;
+  --surface-2: #1C1B17;
+  --ink: #F4F0E6;
+  --muted: #A39D8E;
+  --rule: #2B2922;
+  --gold: #FFC904;
+  --gold-soft: rgba(255, 201, 4, .12);
+  --paper: #F6F1E4;
+  --black: #0A0A0A;
+
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  --step--1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.9rem, 4.2vw, 2.75rem);
+  --step-hero: clamp(3.4rem, 10vw, 7.5rem);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: var(--step-0); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 40; background: var(--bg); }
+a { color: var(--gold); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 3px; }
+img { max-width: 100%; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 800; font-size: var(--step-2); line-height: 1; text-transform: uppercase; letter-spacing: 0.01em; }
+h3 { font-family: var(--body); font-weight: 600; font-size: var(--step-1); line-height: 1.3; }
+p { margin: 0; max-width: 66ch; }
+.muted { color: var(--muted); }
+
+/* ---------- Top bar ---------- */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: rgba(10, 10, 10, .82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); flex: none; }
+.monogram { width: 36px; height: 36px; display: grid; place-items: center; background: var(--gold); color: var(--black); font-family: var(--display); font-weight: 900; font-size: 1.15rem; border-radius: 4px; letter-spacing: 0.02em; }
+.brand-name { font-family: var(--display); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.top nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.top nav::-webkit-scrollbar { display: none; }
+.top nav a { color: var(--muted); text-decoration: none; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 10px; border-radius: 999px; white-space: nowrap; }
+.top nav a:hover { color: var(--ink); }
+.top nav a.active { color: var(--black); background: var(--gold); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
+#sky { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 60% at 75% 40%, rgba(255, 201, 4, .10), transparent 70%); pointer-events: none; }
+.hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(28px, 5vw, 72px); align-items: center; padding-block: clamp(36px, 5.5vw, 72px); }
+.hero-text { display: grid; gap: 26px; min-width: 0; }
+.ucf-line { display: flex; align-items: center; gap: 14px; }
+.ucf-badge { width: 64px; height: 52px; flex: none; }
+.ucf-line div { display: grid; line-height: 1.3; }
+.ucf-line b { font-family: var(--display); font-weight: 800; font-size: 1.15rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.ucf-line span { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+h1 { font-family: var(--display); font-weight: 900; font-size: var(--step-hero); line-height: .86; text-transform: uppercase; letter-spacing: -0.005em; }
+h1 .last { display: block; color: transparent; -webkit-text-stroke: 2px var(--gold); }
+@supports not (-webkit-text-stroke: 2px red) { h1 .last { color: var(--gold); } }
+.lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.5; max-width: 44ch; }
+.lede b { color: var(--gold); font-weight: 600; }
+.status { display: inline-flex; align-items: center; gap: 10px; width: fit-content; font-family: var(--mono); font-size: 0.8125rem; border: 1px solid rgba(255, 201, 4, .45); background: rgba(10, 10, 10, .6); padding: 7px 14px; border-radius: 999px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 0 rgba(255, 201, 4, .6); }
+@media (prefers-reduced-motion: no-preference) { .dot { animation: ping 2s infinite; } @keyframes ping { 70% { box-shadow: 0 0 0 9px rgba(255, 201, 4, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 201, 4, 0); } } }
+.readout { display: grid; grid-template-columns: repeat(4, minmax(0, auto)); justify-content: start; gap: 10px 28px; font-family: var(--mono); font-size: 0.8125rem; }
+.readout div { display: grid; gap: 2px; }
+.readout span { color: var(--muted); font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 600 0.9375rem var(--body); padding: 12px 20px; border-radius: 4px; border: 1px solid var(--gold); background: var(--gold); color: var(--black); text-decoration: none; cursor: pointer; transition: transform .15s, background .15s, color .15s; }
+.btn:hover { transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: #4A463B; }
+.btn.ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.photo { margin: 0; justify-self: end; width: min(100%, 380px); position: relative; }
+.photo img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 201, 4, .35); }
+.photo::before { content: ""; position: absolute; inset: -12px 12px 12px -12px; border: 1px solid var(--gold); border-radius: 6px; z-index: -1; opacity: .7; }
+.photo figcaption { margin-top: 12px; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; }
+
+/* ---------- Logo strip ---------- */
+.logos { border-bottom: 1px solid var(--rule); padding-block: 22px 24px; display: grid; gap: 12px; }
+.logos .eyebrow { text-align: center; color: var(--muted); }
+.strip { position: relative; min-width: 0; }
+.track { overflow-x: auto; overflow-y: hidden; display: flex; scrollbar-width: none; cursor: grab; touch-action: pan-x pan-y; overscroll-behavior-x: contain; -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+.track::-webkit-scrollbar { display: none; }
+.track.dragging { cursor: grabbing; }
+.track.dragging .co { pointer-events: none; }
+.track ul { display: flex; flex: none; gap: 36px; margin: 0; padding: 4px 18px 8px; list-style: none; }
+.track img { -webkit-user-drag: none; user-select: none; }
+.strip-btn { position: absolute; top: 34px; z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 1px solid #4A463B; background: rgba(10, 10, 10, .85); color: var(--ink); font-size: 1.1rem; cursor: pointer; display: grid; place-items: center; transition: border-color .15s, color .15s; }
+.strip-btn:hover { border-color: var(--gold); color: var(--gold); }
+.strip-btn.prev { left: max(8px, env(safe-area-inset-left, 0px)); }
+.strip-btn.next { right: max(8px, env(safe-area-inset-right, 0px)); }
+.strip-hint { text-align: center; font-family: var(--mono); font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.06em; }
+@media (hover: none) { .strip-btn { display: none; } }
+.co { display: grid; gap: 10px; justify-items: center; text-decoration: none; }
+.co-card { width: 188px; height: 84px; display: grid; place-items: center; opacity: .92; transition: transform .2s, opacity .2s; }
+.co-card img { display: block; width: var(--w); height: var(--h); object-fit: contain; }
+.co-name { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.co:hover .co-card, .co:focus-visible .co-card { transform: translateY(-4px); opacity: 1; }
+.co:hover .co-name { color: var(--gold); }
+
+/* ---------- Sections ---------- */
+.sec { padding-block: clamp(40px, 5.5vw, 68px); border-bottom: 1px solid var(--rule); scroll-margin-top: 64px; }
+.sec-head { display: grid; gap: 10px; margin-bottom: clamp(20px, 3vw, 32px); max-width: 760px; }
+.sec-head p { color: var(--muted); }
+
+/* Brief */
+.brief { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.brief .big { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1; text-transform: uppercase; }
+.brief .big em { font-style: normal; color: var(--gold); }
+.brief-side { display: grid; gap: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.chips li { border: 1px solid #3A372E; padding: 7px 14px; border-radius: 999px; font-size: 0.9375rem; transition: background .15s, color .15s, border-color .15s; }
+.chips li:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+
+/* Timeline */
+.timeline { position: relative; display: grid; gap: 28px; padding-left: 34px; padding-bottom: 52px; margin-bottom: 76px; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: rgba(255, 201, 4, .16); }
+.tl-track { position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; pointer-events: none; z-index: 2; --p: 0; }
+.tl-fill { position: absolute; left: 0; top: 0; width: 2px; height: calc(var(--p) * 100%); background: linear-gradient(rgba(255, 201, 4, .35), var(--gold)); box-shadow: 0 0 10px rgba(255, 201, 4, .45); }
+.tl-knob { position: absolute; left: 1px; top: calc(46px + var(--p) * (100% - 46px)); width: 28px; height: 46px; transform: translate(-50%, -100%); filter: drop-shadow(0 0 8px rgba(255, 201, 4, .45)); }
+.tl-knob svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.tl-knob .flame { transform-origin: 14px 40px; opacity: 0; transition: opacity .25s; }
+.tl-track.moving .tl-knob .flame { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) { .tl-track.moving .tl-knob .flame { animation: burn .12s ease-in-out infinite alternate; } @keyframes burn { from { transform: scaleY(.75); } to { transform: scaleY(1.15); } } }
+.tl-earth { position: absolute; left: 1px; top: calc(100% - 2px); width: 72px; height: 72px; transform: translateX(-50%); border-radius: 50%; filter: saturate(.35) brightness(.7); transition: filter .4s, box-shadow .4s; }
+.tl-earth svg { display: block; width: 100%; height: 100%; }
+.tl-track.landed .tl-earth { filter: none; box-shadow: 0 0 0 3px rgba(120, 180, 255, .25), 0 0 28px rgba(110, 170, 255, .55); }
+.role { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: clamp(18px, 3vw, 28px); display: grid; gap: 10px; transition: border-color .2s; }
+.role:hover { border-color: rgba(255, 201, 4, .5); }
+.role::before { content: ""; position: absolute; left: -40px; top: 20px; width: 28px; height: 28px; background: center / contain no-repeat; filter: grayscale(1) brightness(.45); transition: filter .35s, transform .35s; }
+.role:nth-of-type(1)::before { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22s%22%20cx%3D%22.35%22%20cy%3D%22.35%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FBE7B5%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23C9A25A%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%227.5%22%20fill%3D%22url%28%23s%29%22/%3E%3Cpath%20d%3D%22M7%2012.5%20Q14%2011%2021%2012.5%22%20stroke%3D%22%23A88040%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20opacity%3D%22.7%22/%3E%3Cellipse%20cx%3D%2214%22%20cy%3D%2214%22%20rx%3D%2213%22%20ry%3D%224%22%20transform%3D%22rotate%28-20%2014%2014%29%22%20fill%3D%22none%22%20stroke%3D%22%23E8D3A0%22%20stroke-width%3D%221.8%22/%3E%3C/svg%3E"); }
+.role:nth-of-type(2)::before { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22j%22%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%2211%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23j%29%22%3E%3Crect%20width%3D%2228%22%20height%3D%2228%22%20fill%3D%22%23E6C9A3%22/%3E%3Crect%20y%3D%227%22%20width%3D%2228%22%20height%3D%223%22%20fill%3D%22%23B9845A%22/%3E%3Crect%20y%3D%2212%22%20width%3D%2228%22%20height%3D%222%22%20fill%3D%22%23F3E2C8%22/%3E%3Crect%20y%3D%2215.5%22%20width%3D%2228%22%20height%3D%223.2%22%20fill%3D%22%23A86E45%22/%3E%3Crect%20y%3D%2221%22%20width%3D%2228%22%20height%3D%222%22%20fill%3D%22%23C8996F%22/%3E%3Cellipse%20cx%3D%2218%22%20cy%3D%2217%22%20rx%3D%222.6%22%20ry%3D%221.6%22%20fill%3D%22%23C2452D%22/%3E%3C/g%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%2211%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%22.15%22/%3E%3C/svg%3E"); }
+.role:nth-of-type(3)::before { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22m%22%20cx%3D%22.35%22%20cy%3D%22.35%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23F29A6B%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23B2401F%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%228.5%22%20fill%3D%22url%28%23m%29%22/%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2212%22%20r%3D%221.6%22%20fill%3D%22%238E2F16%22%20opacity%3D%22.7%22/%3E%3Ccircle%20cx%3D%2216.5%22%20cy%3D%2216.5%22%20r%3D%222.2%22%20fill%3D%22%238E2F16%22%20opacity%3D%22.6%22/%3E%3Cpath%20d%3D%22M11%206.5%20Q14%205.6%2017%206.5%22%20stroke%3D%22%23FFF%22%20stroke-width%3D%221.4%22%20fill%3D%22none%22%20opacity%3D%22.75%22/%3E%3C/svg%3E"); }
+.role:nth-of-type(4)::before { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22mo%22%20cx%3D%22.38%22%20cy%3D%22.35%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23F2F0EA%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23A8A59C%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%228%22%20fill%3D%22url%28%23mo%29%22/%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211.5%22%20r%3D%221.7%22%20fill%3D%22%238F8C84%22%20opacity%3D%22.6%22/%3E%3Ccircle%20cx%3D%2216.5%22%20cy%3D%2210%22%20r%3D%221%22%20fill%3D%22%238F8C84%22%20opacity%3D%22.55%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216.5%22%20r%3D%222.2%22%20fill%3D%22%238F8C84%22%20opacity%3D%22.5%22/%3E%3Ccircle%20cx%3D%2210.5%22%20cy%3D%2217%22%20r%3D%22.9%22%20fill%3D%22%238F8C84%22%20opacity%3D%22.55%22/%3E%3C/svg%3E"); }
+.role.passed::before { filter: drop-shadow(0 0 6px rgba(255, 255, 255, .35)); transform: scale(1.15); }
+.role-top { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; }
+.role-top.nologo { grid-template-columns: minmax(0, 1fr) auto; }
+.role-split { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 20px; align-items: center; }
+.role-split .role-photos { margin-top: 0; }
+.role-logo { height: 52px; display: flex; align-items: center; }
+.role-logo img { display: block; object-fit: contain; }
+.role-photos { margin-top: 10px; gap: 10px; }
+.role-photos .jrow { gap: 10px; }
+.role-photos .tile figcaption { font-size: 0.75rem; padding: 26px 10px 8px; }
+.role-photos .tile figcaption b { font-size: 0.8125rem; }
+.role .org { color: var(--muted); font-size: 0.9375rem; }
+.when { font-family: var(--mono); font-size: 0.75rem; color: var(--gold); white-space: nowrap; border: 1px solid rgba(255, 201, 4, .35); padding: 4px 10px; border-radius: 999px; }
+.role ul { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.role li { position: relative; padding-left: 18px; color: #DAD4C6; }
+.role li::before { content: ""; position: absolute; left: 0; top: .7em; width: 8px; height: 2px; background: var(--gold); }
+.n { font-family: var(--mono); font-weight: 500; color: var(--gold); white-space: nowrap; font-size: .95em; }
+
+/* Gallery */
+.gallery { display: grid; gap: 12px; }
+.jrow { display: flex; gap: 12px; }
+.tile { flex: var(--r) 1 0; margin: 0; position: relative; overflow: hidden; border-radius: 6px; background: var(--surface); min-width: 0; }
+.tile img { display: block; width: 100%; height: auto; aspect-ratio: var(--r); cursor: zoom-in; transition: filter .3s; }
+.tile figcaption { position: absolute; inset: auto 0 0 0; padding: 32px 14px 12px; font-size: 0.8125rem; line-height: 1.35; color: #E3DCCB; background: linear-gradient(to top, rgba(0, 0, 0, .9), rgba(0, 0, 0, 0)); pointer-events: none; }
+.tile figcaption b { display: block; color: #FFFFFF; font-weight: 600; font-size: 0.9rem; }
+.tile b[data-step]::before { content: attr(data-step); font-family: var(--mono); font-weight: 400; color: var(--gold); margin-right: 8px; }
+@media (hover: hover) {
+  .tile figcaption { opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s; }
+  .tile:hover figcaption, .tile:focus-within figcaption { opacity: 1; transform: none; }
+  .tile:hover { box-shadow: 0 0 0 2px var(--gold); }
+}
+.swipe-hint { display: none; }
+
+/* Flight log */
+.flight-head { display: flex; align-items: center; gap: 16px; }
+.flight-head img { width: 56px; height: 56px; border-radius: 50%; background: #FFFFFF; flex: none; }
+
+
+/* Flight video */
+.video { margin: 0 0 16px; display: grid; gap: 10px; }
+.video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; border: 1px solid rgba(255, 201, 4, .35); }
+.video figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+
+
+/* Arriving at a card from the logo strip */
+.role, .cred { scroll-margin-top: 84px; }
+@keyframes arrive { 0% { box-shadow: 0 0 0 2px var(--gold), 0 0 32px rgba(255, 201, 4, .45); } 100% { box-shadow: 0 0 0 0 rgba(255, 201, 4, 0); } }
+.role:target, .cred:target { animation: arrive 2.2s ease-out 1; border-color: var(--gold); }
+
+/* Case study */
+.case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 56px); align-items: start; }
+.case-text { display: grid; gap: 16px; }
+.specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 6px 0 4px; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+.specs div { padding: 14px 16px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); }
+.specs div:nth-child(2n) { border-right: 0; }
+.specs div:nth-child(n+3) { border-bottom: 0; }
+.specs dt { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.specs dd { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1.05; color: var(--gold); font-variant-numeric: tabular-nums; }
+.certs { display: grid; gap: 14px; }
+.certs figure { margin: 0; display: grid; gap: 8px; }
+.certs img { display: block; width: 100%; height: auto; border-radius: 6px; cursor: zoom-in; border: 1px solid var(--rule); }
+.certs figcaption { font-size: 0.875rem; color: var(--muted); line-height: 1.45; }
+.certs figcaption b { color: var(--ink); font-weight: 600; display: block; }
+
+/* Projects */
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.proj { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 24px; display: grid; gap: 10px; align-content: start; transition: transform .2s, border-color .2s; }
+.proj:hover { transform: translateY(-3px); border-color: var(--gold); }
+.proj .stat { font-family: var(--display); font-weight: 900; font-size: 3rem; line-height: .95; color: var(--gold); font-variant-numeric: tabular-nums; }
+.proj .stat small { font-family: var(--mono); font-weight: 400; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; margin-left: 6px; text-transform: uppercase; }
+.proj p { color: var(--muted); font-size: 0.9375rem; }
+
+/* Story */
+.story { position: relative; overflow: hidden; background: var(--surface); }
+.story::before { content: ""; position: absolute; inset: -50%; background: repeating-radial-gradient(circle at 30% 50%, transparent 0 46px, rgba(255, 201, 4, .07) 47px 48px); }
+@media (prefers-reduced-motion: no-preference) { .story::before { animation: drift 40s linear infinite; } @keyframes drift { to { transform: rotate(360deg); } } }
+.story .wrap { position: relative; display: grid; gap: 26px; }
+.story blockquote { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: .95; max-width: 16ch; }
+.story blockquote em { font-style: normal; color: var(--gold); }
+.story-cols { display: grid; gap: 16px; }
+.story-grid { grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px) !important; align-items: center; }
+.story-body { display: grid; gap: 24px; min-width: 0; }
+.kid { margin: 0; position: relative; display: grid; gap: 10px; }
+.kid img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 201, 4, .35); cursor: zoom-in; transform: rotate(-2deg); transition: transform .3s; box-shadow: 0 18px 40px -20px rgba(0, 0, 0, .8); }
+.kid:hover img { transform: rotate(0deg); }
+.kid figcaption { font-size: 0.8125rem; color: var(--muted); line-height: 1.4; }
+.kid figcaption b { display: block; color: var(--ink); font-weight: 600; }
+
+/* Toolkit */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.skills > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 22px; }
+.skills ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+.skills li { padding-bottom: 6px; border-bottom: 1px dashed var(--rule); }
+.skills li:last-child { border-bottom: 0; }
+
+/* Education */
+.edu { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 16px; }
+.school { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: clamp(20px, 3vw, 30px); display: grid; gap: 14px; align-content: start; }
+.school-top { display: flex; gap: 16px; align-items: center; }
+.school-top img { width: 70px; height: auto; flex: none; }
+.minors { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.minors li { border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 6px; padding: 12px 14px; font-weight: 600; line-height: 1.3; background: var(--surface-2); }
+.minors span { display: block; font-family: var(--mono); font-weight: 400; font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.edu-side { display: grid; gap: 16px; align-content: start; }
+.cred { display: flex; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 14px; transition: border-color .2s; }
+.cred:hover { border-color: var(--gold); }
+.cred img { width: 52px; height: 52px; flex: none; object-fit: contain; background: #FFFFFF; border-radius: 6px; padding: 4px; }
+.cred div { display: grid; gap: 2px; font-size: 0.9375rem; line-height: 1.35; }
+.cred span { color: var(--muted); font-size: 0.8125rem; }
+
+/* Contact */
+.contact { background: var(--gold); color: var(--black); }
+.contact .wrap { padding-block: clamp(48px, 7vw, 80px); display: grid; gap: 20px; }
+.contact .eyebrow { color: var(--black); }
+.contact h2 { font-size: clamp(2.6rem, 8vw, 5.5rem); font-weight: 900; }
+.mail { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.mail code { font-family: var(--mono); font-size: 1.05rem; background: var(--black); color: var(--gold); padding: 12px 16px; border-radius: 4px; user-select: all; overflow-wrap: anywhere; }
+.contact .btn { background: var(--black); color: var(--gold); border-color: var(--black); }
+.contact .btn.ghost { background: transparent; color: var(--black); border-color: var(--black); }
+.copy-msg { font-family: var(--mono); font-size: 0.8125rem; min-height: 1.2em; }
+footer { padding-block: 22px calc(22px + env(safe-area-inset-bottom, 0px)); font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+/* Utilities */
+.to-top { position: fixed; right: calc(18px + env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 25; width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--gold); color: var(--black); font-size: 1.15rem; font-weight: 700; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.to-top.show { opacity: 1; pointer-events: auto; }
+.lb[hidden] { display: none; }
+.doc-page { background: #FFFFFF; }
+.lb { position: fixed; inset: 0; z-index: 50; background: rgba(0, 0, 0, .94); display: grid; grid-template-rows: auto 1fr auto; padding: calc(12px + env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.lb-bar { display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); }
+.lb-stage { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 0; }
+.lb-stage img { max-width: 100%; max-height: calc(100vh - 170px); width: auto; height: auto; margin: 0 auto; border-radius: 4px; }
+.lb-cap { text-align: center; max-width: 60ch; margin: 10px auto 0; font-size: 0.9375rem; color: #CFC8B8; }
+.lb-cap b { color: #FFFFFF; }
+.icon-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid #4A463B; background: transparent; color: var(--ink); font-size: 1.1rem; cursor: pointer; display: inline-grid; place-items: center; }
+.icon-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .photo { justify-self: center; width: min(100%, 300px); order: -1; }
+  .brief, .case, .edu, .story-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .kid { width: min(72%, 280px); justify-self: center; }
+  .skills { grid-template-columns: minmax(0, 1fr); }
+  .brand-name { display: none; }
+}
+@media (max-width: 620px) {
+  .readout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cta .btn { flex: 1 1 auto; }
+  .projects { grid-template-columns: minmax(0, 1fr); }
+  .role-top { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .role .gallery { margin-inline: -18px; padding: 0 18px 4px; scroll-padding-left: 18px; }
+  .role .tile { width: calc(280px * var(--r)); }
+  .role-split { grid-template-columns: minmax(0, 1fr); }
+  .role-single { display: block; margin-inline: 0; padding: 0; }
+  .role-single .tile { width: 100%; max-width: none; }
+  .role-top .when { grid-column: 1 / -1; justify-self: start; }
+  .timeline { padding-left: 26px; }
+  .role::before { left: -33px; }
+  .tl-earth { width: 60px; height: 60px; }
+  .timeline::before, .tl-track { left: 6px; }
+  .tl-knob { width: 24px; height: 40px; top: calc(40px + var(--p) * (100% - 40px)); }
+  .co-card { width: 150px; height: 70px; }
+  .co-card img { width: calc(var(--w) * .82); height: calc(var(--h) * .82); }
+  .minors { grid-template-columns: minmax(0, 1fr); }
+  .gallery { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -20px; padding: 0 20px 4px; scroll-padding-left: 20px; scrollbar-width: none; }
+  .gallery::-webkit-scrollbar { display: none; }
+  .jrow { display: contents; }
+  .tile { flex: 0 0 auto; width: calc(400px * var(--r)); max-width: 84vw; scroll-snap-align: start; }
+  .tile figcaption { opacity: 1; transform: none; }
+  .swipe-hint { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+  .dots { display: flex; gap: 6px; }
+  .dots i { width: 6px; height: 6px; border-radius: 3px; background: #3A372E; transition: width .2s, background .2s; }
+  .dots i.on { width: 18px; background: var(--gold); }
+  .lb-stage { grid-template-columns: minmax(0, 1fr); }
+  .lb-stage .icon-btn { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Back to top"><span class="monogram">JR</span><span class="brand-name">John Rodriguez</span></a>
+    <nav id="nav" aria-label="Sections">
+      <a href="#brief">Goals</a>
+      <a href="#experience">Experience</a>
+      <a href="#photos">Photos</a>
+      <a href="#flight" data-also="mission projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-label="Introduction">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="ucf-line">
+        <img class="ucf-badge" src="co-ucf.svg" alt="UCF Knights logo" width="64" height="52">
+        <div><b>University of Central Florida</b><span>B.S. Industrial Engineering · Dec 2026</span><span>Minors: International Engineering &amp; Computer Science · Leadership in Engineering</span></div>
+      </div>
+      <h1>John <span class="last">Rodriguez</span></h1>
+      <p class="lede">Industrial engineer for <b>space and defense</b>. I turn shop-floor and launch-pad data into decisions, most recently at NASA Kennedy Space Center and on the Lockheed Martin F-35 program.</p>
+      <div class="status"><span class="dot" aria-hidden="true"></span>Open to full-time roles starting 2027</div>
+      <div class="readout">
+        <div><span>Base</span>Orlando, FL</div>
+        <div><span>Coords</span>28.60° N 81.20° W</div>
+        <div><span>Languages</span>EN · ES</div>
+        <div><span>Citizenship</span>U.S. citizen</div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/johns-rodriguezm" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <figure class="photo">
+      <img src="hero-full.jpg" alt="John Rodriguez in a navy suit on the UCF campus, standing on a path lined with palm trees" width="1200" height="1798">
+    </figure>
+  </div>
+</section>
+
+<div class="logos" aria-label="Organizations I've worked and learned with">
+  <span class="eyebrow">Organizations I've worked and learned with</span>
+  <div class="strip">
+  <button class="strip-btn prev" type="button" id="strip-prev" aria-label="Scroll logos left">←</button>
+  <div class="track" id="track" tabindex="0" aria-label="Company logos, scroll sideways">
+    <ul>
+      <li><a class="co" href="#role-amentum"><span class="co-card"><img src="lc-nasa.png" alt="NASA" style="--w: 77px; --h: 64px"></span><span class="co-name">Kennedy Space Center</span></a></li>
+      <li><a class="co" href="#role-amentum"><span class="co-card"><img src="lc-amentum.png" alt="Amentum" style="--w: 114px; --h: 56px"></span><span class="co-name">COMET Contract</span></a></li>
+      <li><a class="co" href="#role-lockheed"><span class="co-card"><img src="lc-lockheed.png" alt="Lockheed Martin" style="--w: 160px; --h: 38px"></span><span class="co-name">F-35 Program</span></a></li>
+      <li><a class="co" href="#role-jst"><span class="co-card"><img src="lc-jst.png" alt="JST Power Equipment" style="--w: 59px; --h: 64px"></span><span class="co-name">Executive VP intern</span></a></li>
+      <li><a class="co" href="#role-allie"><span class="co-card"><img src="lc-allie.svg" alt="Allie" style="--w: 140px; --h: 46px"></span><span class="co-name">IFS Unleashed</span></a></li>
+      <li><a class="co" href="#cred-mckinsey"><span class="co-card"><img src="lc-mckinsey.png" alt="McKinsey &amp; Company" style="--w: 144px; --h: 44px"></span><span class="co-name">Forward Program</span></a></li>
+    </ul>
+    <ul aria-hidden="true">
+      <li><a class="co" href="#role-amentum" tabindex="-1"><span class="co-card"><img src="lc-nasa.png" alt="" style="--w: 77px; --h: 64px"></span><span class="co-name">Kennedy Space Center</span></a></li>
+      <li><a class="co" href="#role-amentum" tabindex="-1"><span class="co-card"><img src="lc-amentum.png" alt="" style="--w: 114px; --h: 56px"></span><span class="co-name">COMET Contract</span></a></li>
+      <li><a class="co" href="#role-lockheed" tabindex="-1"><span class="co-card"><img src="lc-lockheed.png" alt="" style="--w: 160px; --h: 38px"></span><span class="co-name">F-35 Program</span></a></li>
+      <li><a class="co" href="#role-jst" tabindex="-1"><span class="co-card"><img src="lc-jst.png" alt="" style="--w: 59px; --h: 64px"></span><span class="co-name">Executive VP intern</span></a></li>
+      <li><a class="co" href="#role-allie" tabindex="-1"><span class="co-card"><img src="lc-allie.svg" alt="" style="--w: 140px; --h: 46px"></span><span class="co-name">IFS Unleashed</span></a></li>
+      <li><a class="co" href="#cred-mckinsey" tabindex="-1"><span class="co-card"><img src="lc-mckinsey.png" alt="" style="--w: 144px; --h: 44px"></span><span class="co-name">Forward Program</span></a></li>
+    </ul>
+  </div>
+  <button class="strip-btn next" type="button" id="strip-next" aria-label="Scroll logos right">→</button>
+  </div>
+  <span class="strip-hint" aria-hidden="true">Drag or swipe to browse</span>
+</div>
+
+<section class="sec" id="brief">
+  <div class="wrap brief">
+    <div>
+      <span class="eyebrow">Goals</span>
+      <p class="big" style="margin-top:14px">Looking for a full-time role in <em>space or defense</em>, starting 2027.</p>
+    </div>
+    <div class="brief-side">
+      <p>I like work where floor data turns into a decision: finding the failure mode behind a stack of nonconformances, choosing the right tool to inspect a space no one can reach, or getting seven reports to agree on the same number.</p>
+      <p class="muted">Open to on-site, hybrid or remote roles anywhere in the U.S.</p>
+      <ul class="chips" aria-label="Target roles">
+        <li>Systems Engineering</li><li>Operations Engineering</li><li>Reliability Engineering</li><li>Manufacturing Engineering</li><li>Quality Engineering</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Experience</span><h2>Where I've worked</h2><p>Most recent first. Select any photo to enlarge it.</p></div>
+    <div class="timeline" id="timeline">
+      <div class="tl-track" aria-hidden="true"><span class="tl-fill"></span><span class="tl-knob"><svg viewBox="0 0 28 46" aria-hidden="true"><path class="flame" d="M9 37 Q14 52 19 37 Z" fill="#FF8A00"/><path class="flame" d="M11 37 Q14 47 17 37 Z" fill="#FFE27A"/><path d="M14 1 C20 7 21 16 21 24 L21 34 L7 34 L7 24 C7 16 8 7 14 1 Z" fill="#F4F0E6"/><path d="M7 26 L1 34 L1 38 L7 35 Z M21 26 L27 34 L27 38 L21 35 Z" fill="#FFC904"/><rect x="10" y="34" width="8" height="3" rx="1" fill="#A39D8E"/><circle cx="14" cy="15" r="3.6" fill="#0A0A0A" stroke="#FFC904" stroke-width="1.6"/><path d="M10.2 6 Q14 3 17.8 6" stroke="#FFC904" stroke-width="1.4" fill="none"/></svg></span><span class="tl-earth"><svg viewBox="0 0 72 72" aria-hidden="true"><defs><radialGradient id="eo" cx=".38" cy=".32"><stop offset="0" stop-color="#5DA9FF"/><stop offset=".7" stop-color="#1F5FC4"/><stop offset="1" stop-color="#123B86"/></radialGradient><clipPath id="ec"><circle cx="36" cy="36" r="34"/></clipPath></defs><circle cx="36" cy="36" r="34" fill="url(#eo)"/><g clip-path="url(#ec)" fill="#3FA35B"><path d="M14 18 C22 10 34 12 36 20 C38 27 30 28 31 35 C32 42 24 46 19 41 C14 36 18 30 13 27 C9 24 10 21 14 18 Z"/><path d="M44 30 C50 26 60 30 62 38 C64 46 56 54 50 52 C46 51 47 45 43 42 C40 39 40 33 44 30 Z"/><path d="M28 54 C33 52 38 56 36 62 C34 67 26 66 25 61 C24 58 25 55 28 54 Z"/></g><g clip-path="url(#ec)" fill="#FFFFFF" opacity=".55"><ellipse cx="46" cy="16" rx="10" ry="2.4"/><ellipse cx="24" cy="48" rx="8" ry="2"/><ellipse cx="56" cy="58" rx="7" ry="1.8"/></g><circle cx="36" cy="36" r="34" fill="none" stroke="#9CCBFF" stroke-opacity=".5" stroke-width="1.5"/></svg></span></div>
+      <article class="role" id="role-allie">
+        <div class="role-top">
+          <span class="role-logo"><img src="lc-allie.svg" alt="Allie logo" style="width:96px;height:32px"></span>
+          <div><h3>Sales Engineer, IFS Unleashed</h3><div class="org">Allie, AI for Manufacturing · Orlando, FL · Event role</div></div>
+          <span class="when">Oct 2026</span>
+        </div>
+        <ul>
+          <li>Represented Allie at the IFS Unleashed conference on one day's notice, learning its full platform and plant-floor environment in under <span class="n">8</span> hours.</li>
+          <li>Generated <span class="n">250+</span> leads by pitching to executives and C-suite leaders from major industrial companies.</li>
+          <li>Explained how Allie connects to the PLCs, SCADA systems and historians a plant already runs through a read-only edge gateway, then maps how every machine on a line affects the others.</li>
+          <li>Walked visitors through the closed loop: detect, find the true root cause instead of a correlation, act with work orders that flow into existing ERP and EAM systems, and verify the fix held.</li>
+        </ul>
+        <div class="gallery role-photos" id="g-allie" aria-label="Photos">
+            <div class="jrow"><figure class="tile" style="--r: 1.3333"><img class="zoomable" src="ifs-floor.jpg" alt="The IFS Unleashed expo floor with demo stations for finance, manufacturing, service and asset management" width="1000" height="750" loading="lazy"><figcaption><b>Expo floor</b>IFS Unleashed, Orlando.</figcaption></figure><figure class="tile" style="--r: 0.7500"><img class="zoomable" src="ifs-islands.jpg" alt="An IFS Unleashed sign at Universal's Islands of Adventure at night" width="750" height="1000" loading="lazy"><figcaption><b>Attendee night</b>Islands of Adventure, reserved for IFS Unleashed.</figcaption></figure><figure class="tile" style="--r: 1.3333"><img class="zoomable" src="allie.jpg" alt="John at the Allie booth at IFS Unleashed in Orlando" width="1100" height="825" loading="lazy"><figcaption><b>IFS Unleashed, Orlando</b>At the Allie booth.</figcaption></figure></div>
+        </div>
+        <div class="swipe-hint" aria-hidden="true"><span class="dots" data-for="g-allie"></span><span>Swipe for more →</span></div>
+      </article>
+      <article class="role" id="role-amentum">
+        <div class="role-top">
+          <span class="role-logo"><img src="lc-amentum.png" alt="Amentum logo" style="width:84px;height:42px"></span>
+          <div><h3>Engineering Technician II, Predictive Maintenance &amp; Analysis</h3><div class="org">Amentum · NASA COMET Contract · Kennedy Space Center, LC-39B</div></div>
+          <span class="when">May – Aug 2026</span>
+        </div>
+        <ul>
+          <li>Diagnosed pumps, motors and mechanical subsystems across KSC ground systems, including ECS, with <span class="n">11</span> inspection technologies: IR thermography, ultrasound, vibration analysis, drone IR surveys and motion amplification.</li>
+          <li>Resolved a confined-space inspection problem end to end. Evaluated <span class="n">5+</span> vendors and brought in the Wombat robotic crawler, which NASA engineers now use.</li>
+          <li>Built a lessons-learned AI use case on ORBIT, a retrieval-augmented system that surfaces insights from about <span class="n">1,000</span> technical documents, with SpaceX and the Thermal Protection System Facility. Presented it at Amentum's Executive Impact Showcase.</li>
+          <li>Co-authoring a NASA research paper on this work, currently in progress.</li>
+          <li>Wrote a maintenance task list for ECS rotating equipment and proposed IR payload thermography to modernize Crawlerway inspections.</li>
+        </ul>
+        <div class="gallery role-photos" id="g-amentum" aria-label="Photos">
+            <div class="jrow"><figure class="tile" style="--r: 0.7500"><img class="zoomable" src="am-vab-hardhat.jpg" alt="John and a colleague in hard hats outside the Vehicle Assembly Building" width="750" height="1000" loading="lazy"><figcaption><b>Vehicle Assembly Building</b>Suited up for a field inspection.</figcaption></figure><figure class="tile" style="--r: 1.3333"><img class="zoomable" src="am-interns.jpg" alt="Six COMET interns standing under a NASA mission-patch sign at Kennedy Space Center" width="1000" height="750" loading="lazy"><figcaption><b>COMET intern class</b>Summer 2026 at Kennedy Space Center.</figcaption></figure><figure class="tile" style="--r: 0.7500"><img class="zoomable" src="am-vab-view.jpg" alt="The Vehicle Assembly Building seen from an upper-floor window" width="750" height="1000" loading="lazy"><figcaption><b>The view from work</b>The VAB, home of Artemis stacking.</figcaption></figure></div>
+        </div>
+        <div class="swipe-hint" aria-hidden="true"><span class="dots" data-for="g-amentum"></span><span>Swipe for more →</span></div>
+      </article>
+      <article class="role" id="role-lockheed">
+        <div class="role-top">
+          <span class="role-logo"><img src="lc-lockheed.png" alt="Lockheed Martin logo" style="width:120px;height:29px"></span>
+          <div><h3>Quality Engineering Intern, F-35 Program Quality</h3><div class="org">Lockheed Martin Missiles and Fire Control · Orlando, FL</div></div>
+          <span class="when">Oct 2025 – May 2026</span>
+        </div>
+        <ul>
+          <li>Analyzed <span class="n">100+</span> nonconformance records to find recurring failure modes on critical F-35 components.</li>
+          <li>Built <span class="n">3</span> weekly quality reports on key defect drivers that senior engineers used to target corrective actions.</li>
+          <li>Contributed analysis to a quality study on rework, lead time and Foreign Object Debris, projected to save millions once fully implemented.</li>
+          <li>Standardized data retrieval across <span class="n">7</span> source systems so everyone, from the shop floor to director level, works from the same numbers.</li>
+        </ul>
+        <div class="gallery role-photos" id="g-lockheed" aria-label="Photos">
+            <div class="jrow"><figure class="tile" style="--r: 1.3333"><img class="zoomable" src="lm-interns.jpg" alt="John with three fellow interns in front of F-35 photos" width="1000" height="750" loading="lazy"><figcaption><b>CWEP interns</b>With my fellow Program Quality interns.</figcaption></figure><figure class="tile" style="--r: 1.2788"><img class="zoomable" src="lm-print.jpg" alt="A framed F-35 print signed with thank-you notes from the team" width="1000" height="782" loading="lazy"><figcaption><b>My farewell print</b>Signed by the F-35 team on my last day.</figcaption></figure><figure class="tile" style="--r: 1.3333"><img class="zoomable" src="lm-team.jpg" alt="The F-35 Program Quality team posing together in the office" width="1000" height="750" loading="lazy"><figcaption><b>F-35 Program Quality team</b>Orlando, spring 2026.</figcaption></figure></div>
+        </div>
+        <div class="swipe-hint" aria-hidden="true"><span class="dots" data-for="g-lockheed"></span><span>Swipe for more →</span></div>
+      </article>
+      <article class="role" id="role-jst">
+        <div class="role-top">
+          <span class="role-logo"><img src="lc-jst.png" alt="JST Power Equipment logo" style="width:44px;height:47px"></span>
+          <div><h3>Executive Vice President Intern</h3><div class="org">JST Power Equipment · Lake Mary, FL</div></div>
+          <span class="when">Apr – Sep 2025</span>
+        </div>
+        <ul>
+          <li>Supported <span class="n">10+</span> strategic initiatives with operational and market analysis for the executive team.</li>
+          <li>Benchmarked transformer costs against competitor pricing to support competitive quoting.</li>
+          <li>Built a stakeholder outreach platform with the Manufacturers Association of Central Florida, reaching <span class="n">100+</span> partner organizations.</li>
+        </ul>
+        <div class="gallery role-photos" id="g-jst" aria-label="Photos">
+            <div class="jrow"><figure class="tile" style="--r: 0.7500"><img class="zoomable" src="jst.jpg" alt="John with two colleagues at the JST Power Equipment front desk" width="675" height="900" loading="lazy"><figcaption><b>JST headquarters</b>With the team in Lake Mary.</figcaption></figure><figure class="tile" style="--r: 0.5443"><img class="zoomable" src="jst-test.jpg" alt="A three-phase switchgear unit behind a safety fence during testing" width="700" height="1286" loading="lazy"><figcaption><b>R&amp;D testing</b>A switchgear unit under test.</figcaption></figure><figure class="tile" style="--r: 0.7500"><img class="zoomable" src="jst-floor.jpg" alt="Rows of red breaker pole assemblies staged on carts beside parts shelving" width="900" height="1200" loading="lazy"><figcaption><b>Production floor</b>Breaker assemblies staged for build.</figcaption></figure></div>
+        </div>
+        <div class="swipe-hint" aria-hidden="true"><span class="dots" data-for="g-jst"></span><span>Swipe for more →</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="photos">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">In the field</span><h2>Photos</h2><p>Select any photo to see it full size. Use the arrow keys or swipe to move between photos.</p></div>
+        <div class="gallery" id="gal" aria-label="Photo gallery">
+      <div class="jrow">
+        <figure class="tile" style="--r: .75"><img class="zoomable" src="be4.jpg" alt="John standing between two BE-4 rocket engines" width="675" height="900" loading="lazy"><figcaption><b>Between two BE-4 engines</b>The engine behind Blue Origin's New Glenn and ULA's Vulcan.</figcaption></figure>
+        <figure class="tile" style="--r: 1.3333"><img class="zoomable" src="vensa-talk.jpg" alt="John presenting a professional development workshop at UCF" width="900" height="675" loading="lazy"><figcaption><b>Leading a VENSA workshop</b>Teaching members how to build a stronger LinkedIn profile.</figcaption></figure>
+        <figure class="tile" style="--r: .806"><img class="zoomable" src="headshot.jpg" alt="Portrait of John Rodriguez in a navy suit on the UCF campus" width="640" height="794" loading="lazy"><figcaption><b>UCF campus</b>Industrial Engineering, class of December 2026.</figcaption></figure>
+      </div>
+      <div class="jrow">
+        <figure class="tile" style="--r: .8"><img class="zoomable" src="hero.jpg" alt="John in front of the Vehicle Assembly Building at Kennedy Space Center" width="800" height="1000" loading="lazy"><figcaption><b>Kennedy Space Center</b>Summer 2026 with Amentum, across from the Vehicle Assembly Building.</figcaption></figure>
+        <figure class="tile" style="--r: 1.3333"><img class="zoomable" src="truss.jpg" alt="A modular truss structure with load sensors on a lab bench" width="900" height="675" loading="lazy"><figcaption><b>In the lab</b>Building and load-testing a truss with sensor data.</figcaption></figure>
+        <figure class="tile" style="--r: .75"><img class="zoomable" src="spain.jpg" alt="Spanish flag flying over a plaza in Granada, Spain" width="675" height="900" loading="lazy"><figcaption><b>Study abroad in Spain</b>A semester of engineering coursework in Spanish, fall 2024.</figcaption></figure>
+      </div>
+      <div class="jrow">
+        <figure class="tile" style="--r: .75"><img class="zoomable" src="astro.jpg" alt="John at a NASA event with astronauts on stage behind him" width="900" height="1200" loading="lazy"><figcaption><b>NASA event at KSC</b>Meeting the people who fly what we maintain.</figcaption></figure>
+        <figure class="tile" style="--r: 1.3333"><img class="zoomable" src="vensa.jpg" alt="Venezuelan Student Association soccer team with a Venezuelan flag" width="900" height="675" loading="lazy"><figcaption><b>Venezuelan Student Association</b>Community off the clock, flag and all.</figcaption></figure>
+      </div>
+    </div>
+    <div class="swipe-hint" aria-hidden="true"><span class="dots" data-for="gal"></span><span>Swipe for more →</span></div>
+  </div>
+</section>
+
+<section class="sec" id="flight">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Flight log · Space Trek Academy · Aug 2025</span>
+      <div class="flight-head"><img src="logo-spacetrek.png" alt="Space Trek Academy logo" width="56" height="56"><h2>High-altitude balloon</h2></div>
+      <p>As Flight Director I led 13 students from a bare foam box to a 92,000 ft flight and full recovery of every payload. Watch the mission recap below.</p>
+    </div>
+    <figure class="video">
+      <video controls playsinline preload="none" poster="spacetrek-poster.jpg" width="1280" height="720" aria-label="Space Trek Academy high-altitude balloon program video">
+        <source src="spacetrek.mp4" type="video/mp4">
+      </video>
+      <figcaption><span>Mission recap · 2 min 36 s</span><span>Video by the NASA Florida Space Grant Consortium</span></figcaption>
+    </figure>
+    <div class="gallery" id="flightgal" aria-label="Balloon mission photos">
+      <div class="jrow">
+        <figure class="tile" style="--r: .5611"><img class="zoomable" src="build.jpg" alt="John assembling the insulated foam payload box" width="505" height="900" loading="lazy"><figcaption><b data-step="T1">Build</b>Taping and insulating the payload housing.</figcaption></figure>
+        <figure class="tile" style="--r: .75"><img class="zoomable" src="wiring.jpg" alt="Inside the payload: an Arduino Mega with sensors and an SD logger" width="675" height="900" loading="lazy"><figcaption><b data-step="T2">Integrate</b>Arduino Mega, sensors and an SD data logger.</figcaption></figure>
+        <figure class="tile" style="--r: .5611"><img class="zoomable" src="fill.jpg" alt="Team holding the inflated balloon before launch while John supervises" width="505" height="900" loading="lazy"><figcaption><b data-step="T3">Inflate</b>Final checks before release.</figcaption></figure>
+      </div>
+      <div class="jrow">
+        <figure class="tile" style="--r: .75"><img class="zoomable" src="ascent.jpg" alt="The balloon ascending with payloads and parachutes on the flight line" width="675" height="900" loading="lazy"><figcaption><b data-step="T4">Launch</b>Payload train climbing toward 92,000 ft.</figcaption></figure>
+        <figure class="tile" style="--r: 1.7822"><img class="zoomable" src="track.jpg" alt="John and the team tracking the flight on a phone and computer" width="900" height="505" loading="lazy"><figcaption><b data-step="T5">Track</b>Following the flight path to recovery.</figcaption></figure>
+      </div>
+    </div>
+    <div class="swipe-hint" aria-hidden="true"><span class="dots" data-for="flightgal"></span><span>Swipe for more →</span></div>
+  </div>
+</section>
+
+<section class="sec" id="mission">
+  <div class="wrap case">
+    <div class="case-text">
+      <span class="eyebrow">Case study · NASA L'SPACE Mission Concept Academy · Fall 2025</span>
+      <h2>Nova Aeros: a rover for Martian lava-tube caves</h2>
+      <p>Our 19-person team designed a Discovery-class mission to send a solar-powered rover into collapsed lava tubes in the Tharsis region. The rover would map cave interiors and measure temperature, radiation, gas gradients and mineral content, both to find environments that could preserve signs of life and to judge whether caves could shelter future crews.</p>
+      <p class="muted">As Deputy Project Manager of Resources I worked on the programmatics: schedule and budget bases of estimate, risk tracking and weekly status to the Project Manager, keeping the design inside the client's limits.</p>
+      <dl class="specs">
+        <div><dt>Cost cap</dt><dd>$550M</dd></div>
+        <div><dt>Mass limit</dt><dd>250 kg</dd></div>
+        <div><dt>Stowed envelope</dt><dd>3.5 m cube</dd></div>
+        <div><dt>Launch readiness</dt><dd>Dec 2030</dd></div>
+      </dl>
+      <div class="cta"><button class="btn" type="button" id="doc-open">Read the Mission Concept Review · 32 pages</button></div>
+    </div>
+    <div class="certs">
+      <figure><img class="zoomable" src="cert-mca.jpg" alt="Certificate of completion, Fall 2025 L'SPACE Mission Concept Academy" loading="lazy"><figcaption><b>Mission Concept Academy, Fall 2025</b>Badges: requirements, risk management, project management, systems, heat transfer.</figcaption></figure>
+      <figure><img class="zoomable" src="cert-npwee.jpg" alt="Certificate of completion, NASA Proposal Writing and Evaluation Experience Academy, Summer 2025" loading="lazy"><figcaption><b>Proposal Writing &amp; Evaluation Experience, Summer 2025</b>NASA L'SPACE NPWEE Academy.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="projects">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Projects</span><h2>By the numbers</h2></div>
+    <div class="projects">
+      <div class="proj"><span class="eyebrow">NASA L'SPACE · 2025</span><div class="stat">$550M<small>simulated mission</small></div><h3>Deputy Project Manager of Resources</h3><p>Led a four-person programmatics team on a Discovery-class mission concept. Owned cost, schedule, risk and earned value across every phase.</p></div>
+      <div class="proj"><span class="eyebrow">Space Trek Academy · Aug 2025</span><div class="stat">92,000<small>ft peak altitude</small></div><h3>Flight Director, high-altitude balloon</h3><p>Filed the FAA NOTAM, integrated two experiments on dual Arduino Megas, and recovered all hardware and data.</p></div>
+      <div class="proj"><span class="eyebrow">NASA L'SPACE NPWEE · 2025</span><div class="stat">$10K<small>proposal</small></div><h3>Engineering Program Analyst</h3><p>Directed a nationwide team of 10+ students to a mission concept that met formal NASA system requirements and wrote the proposal package.</p></div>
+      <div class="proj"><span class="eyebrow">Kennedy Space Center · 2026</span><div class="stat">1,000<small>documents indexed</small></div><h3>ORBIT lessons-learned AI</h3><p>A retrieval-augmented use case that lets technicians ask questions of past technical documents, backed by COMET leadership. A NASA research paper is in progress, with me as a co-author.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec story" id="about">
+  <div class="wrap story-grid">
+    <figure class="kid">
+      <img class="zoomable" src="little-me.jpg" alt="John as a young boy in Venezuela wearing an orange NASA flight suit and holding a toy space shuttle" width="800" height="1119" loading="lazy">
+      <figcaption><b>Little me, Venezuela</b>Commander patch, toy shuttle, big plans.</figcaption>
+    </figure>
+    <div class="story-body">
+    <span class="eyebrow">About</span>
+    <blockquote>From Venezuela <em>to the Cape.</em></blockquote>
+    <div class="story-cols">
+      <p>I grew up in Venezuela dreaming about space. This summer I worked at Launch Complex 39B, the pad that launches Artemis. What I took from it: find your niche and go deep, but build bridges to the team next door, because they are often solving the same problem.</p>
+      <p>I try to open doors for others too. As UCF SHPE's Site Tour Director I'm taking 30+ students inside Blue Origin, ULA and Northrop Grumman this year. I founded VENSA's professional development branch for 200+ members and reviewed student work for the Plant the Moon Challenge.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Toolkit</span><h2>What I work with</h2></div>
+    <div class="skills">
+      <div><span class="eyebrow">Methods</span><ul><li>Lean Six Sigma</li><li>Root cause analysis</li><li>Nonconformance reporting</li><li>Predictive maintenance</li><li>Earned value &amp; risk management</li></ul></div>
+      <div><span class="eyebrow">Software</span><ul><li>Python, C</li><li>Power BI, Tableau, Excel</li><li>SAP, Jira, Salesforce</li><li>Simio simulation</li><li>RAG / generative AI tools</li></ul></div>
+      <div><span class="eyebrow">Hands-on</span><ul><li>IR thermography, ultrasound</li><li>Vibration analysis</li><li>Borescoping</li><li>Precision &amp; torque tools</li><li>Safety wiring</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="education">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Education</span><h2>Go Knights</h2></div>
+    <div class="edu">
+      <div class="school">
+        <div class="school-top">
+          <img src="co-ucf.svg" alt="UCF Knights logo" width="70" height="56">
+          <div><h3>University of Central Florida</h3><div class="muted">B.S. Industrial Engineering with two minors · Aug 2022 – Dec 2026</div></div>
+        </div>
+        <ul class="minors" aria-label="Minors">
+          <li><span>Minor</span>International Engineering &amp; Computer Science</li>
+          <li><span>Minor</span>Leadership in Engineering</li>
+        </ul>
+        <p class="muted">Dean's List (3×) · Florida Bright Futures Scholar · SHPE Site Tour Director · Knights Experimental Rocketry</p>
+        <p class="muted">Study abroad: Universidad Pontificia Comillas, Madrid, fall 2024, engineering coursework taught in Spanish.</p>
+      </div>
+      <div class="edu-side">
+        <div class="cred" id="cred-mckinsey"><img src="logo-mckinsey.png" alt="McKinsey.org Forward Program badge"><div><b>McKinsey Forward Program</b><span>Completed Oct 2026</span></div></div>
+        <div class="cred"><img src="logo-ptm.png" alt="Plant the Moon Challenge logo"><div><b>Plant the Moon Challenge</b><span>Reviewer, lunar-regolith student experiments</span></div></div>
+        <div class="cred"><img src="logo-spacetrek.png" alt="Space Trek Academy logo"><div><b>Space Trek Academy</b><span>Flight Director, Aug 2025</span></div></div>
+        <p class="muted" style="font-size:.875rem">Also certified: Lean Six Sigma · Project Management Foundations: Quality · Leveraging Generative AI for Project Management</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Hiring for 2027? Let's talk.</h2>
+    <p>Email is the fastest way to reach me. I usually reply within a day.</p>
+    <div class="mail">
+      <code id="email">johns.rodriguezm@gmail.com</code>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <a class="btn ghost" href="https://www.linkedin.com/in/johns-rodriguezm" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="copy-msg" id="copy-msg" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>John Rodriguez · Industrial Engineer</span><span>Orlando, FL · Updated Oct 2026</span></div></footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-bar"><span id="lb-count"></span><button class="icon-btn" type="button" id="lb-close" aria-label="Close">✕</button></div>
+  <div class="lb-stage">
+    <button class="icon-btn" type="button" id="lb-prev" aria-label="Previous photo">←</button>
+    <img id="lb-img" alt="">
+    <button class="icon-btn" type="button" id="lb-next" aria-label="Next photo">→</button>
+  </div>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<div class="lb" id="doc" hidden role="dialog" aria-modal="true" aria-label="Mission Concept Review reader">
+  <div class="lb-bar"><span id="doc-count"></span><button class="icon-btn" type="button" id="doc-close" aria-label="Close">✕</button></div>
+  <div class="lb-stage">
+    <button class="icon-btn" type="button" id="doc-prev" aria-label="Previous page">←</button>
+    <img id="doc-img" alt="" class="doc-page">
+    <button class="icon-btn" type="button" id="doc-next" aria-label="Next page">→</button>
+  </div>
+  <div class="lb-cap">Nova Aeros · Mission Concept Review · NASA L'SPACE MCA, Fall 2025</div>
+</div>
+<script>
+/* Star field with slow gold orbits behind the hero */
+(function () {
+  var c = document.getElementById('sky'); if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d'), hero = c.parentElement, stars = [], W = 0, H = 0, dpr = 1, t0 = performance.now(), shoot = null, mx = 0, my = 0;
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2); W = hero.clientWidth; H = hero.clientHeight;
+    c.width = W * dpr; c.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.round(W * H / 5200); stars = [];
+    for (var i = 0; i < n; i++) stars.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.3 + .2, z: Math.random() * .8 + .2, p: Math.random() * 6.28, g: Math.random() < .12 });
+    if (still) draw(0);
+  }
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    var cx = W * .74, cy = H * .46;
+    ctx.save(); ctx.translate(cx, cy);
+    for (var k = 0; k < 3; k++) {
+      ctx.save(); ctx.rotate(-.35 + k * .22 + t * .00003 * (k + 1));
+      ctx.beginPath(); ctx.ellipse(0, 0, W * (.28 + k * .12), H * (.16 + k * .07), 0, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255, 201, 4, ' + (.16 - k * .04) + ')'; ctx.lineWidth = 1; ctx.stroke();
+      var a = t * .00018 * (k % 2 ? -1 : 1) + k * 2;
+      ctx.beginPath(); ctx.arc(Math.cos(a) * W * (.28 + k * .12), Math.sin(a) * H * (.16 + k * .07), 2.4, 0, 6.28);
+      ctx.fillStyle = 'rgba(255, 201, 4, .85)'; ctx.fill(); ctx.restore();
+    }
+    ctx.restore();
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i], x = (s.x - t * .006 * s.z + mx * s.z * 14) % W; if (x < 0) x += W;
+      var y = s.y + my * s.z * 10, tw = .55 + .45 * Math.sin(t * .0016 + s.p);
+      ctx.beginPath(); ctx.arc(x, y, s.r, 0, 6.28);
+      ctx.fillStyle = s.g ? 'rgba(255, 201, 4, ' + (.7 * tw) + ')' : 'rgba(244, 240, 230, ' + (.75 * tw) + ')'; ctx.fill();
+    }
+    if (!still) {
+      if (!shoot && Math.random() < .004) shoot = { x: Math.random() * W * .7, y: Math.random() * H * .4, l: 0 };
+      if (shoot) {
+        shoot.l += 14; var gx = shoot.x + shoot.l, gy = shoot.y + shoot.l * .45;
+        var grd = ctx.createLinearGradient(gx - 90, gy - 40, gx, gy); grd.addColorStop(0, 'rgba(255,201,4,0)'); grd.addColorStop(1, 'rgba(255,240,200,.9)');
+        ctx.strokeStyle = grd; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(gx - 90, gy - 40); ctx.lineTo(gx, gy); ctx.stroke();
+        if (shoot.l > W * .5) shoot = null;
+      }
+    }
+  }
+  var visible = true;
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(hero);
+  function loop(now) { if (visible && !document.hidden) draw(now - t0); requestAnimationFrame(loop); }
+  window.addEventListener('resize', size);
+  hero.addEventListener('pointermove', function (e) { var r = hero.getBoundingClientRect(); mx = (e.clientX - r.left) / r.width - .5; my = (e.clientY - r.top) / r.height - .5; });
+  size(); if (!still) requestAnimationFrame(loop);
+})();
+
+/* Active section in nav: the last section whose top has passed 40% of the screen */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('#nav a')), map = {}, nav = document.getElementById('nav'), current = null, ticking = false;
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; (a.getAttribute('data-also') || '').split(' ').forEach(function (id) { if (id) map[id] = a; }); });
+  var secs = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean)
+    .sort(function (x, y) { return x.compareDocumentPosition(y) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1; });
+  function upd() {
+    ticking = false;
+    var line = window.innerHeight * 0.4, hit = null;
+    secs.forEach(function (el) { if (el.getBoundingClientRect().top <= line) hit = el; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) hit = secs[secs.length - 1];
+    var a = hit ? map[hit.id] : null;
+    if (a === current) return; current = a;
+    links.forEach(function (l) { l.classList.toggle('active', l === a); });
+    if (a && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.clientWidth / 2, behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+  window.addEventListener('resize', upd); window.addEventListener('load', upd); upd();
+})();
+
+/* Logo strip: auto-scrolls, and the visitor can drag, swipe, wheel or use arrows */
+(function () {
+  var t = document.getElementById('track'); if (!t) return;
+  var first = t.querySelector('ul'), still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pos = 0, last = performance.now(), holdUntil = 0, hover = false, drag = null, moved = false;
+  function now() { return performance.now(); }
+  function period() { return first.offsetWidth; }
+  function fill() { var n = 0; while (t.scrollWidth < t.clientWidth + 2 * period() && n++ < 6) { var c = first.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelectorAll('a').forEach(function (x) { x.tabIndex = -1; }); c.querySelectorAll('img').forEach(function (x) { x.alt = ''; }); t.appendChild(c); } }
+  function wrap() { var w = period(); if (!w) return; if (t.scrollLeft >= w) t.scrollLeft -= w; else if (t.scrollLeft <= 0) t.scrollLeft += w; pos = t.scrollLeft; }
+  function hold(ms) { holdUntil = now() + ms; }
+  function tick(n) {
+    var dt = Math.min(64, n - last); last = n;
+    if (!still && !hover && !drag && n > holdUntil && !document.hidden) { pos += dt * 0.035; t.scrollLeft = pos; if (pos >= period()) { pos -= period(); t.scrollLeft = pos; } }
+    else pos = t.scrollLeft;
+    requestAnimationFrame(tick);
+  }
+  t.addEventListener('scroll', function () { if (drag || now() < holdUntil) wrap(); }, { passive: true });
+  t.addEventListener('mouseenter', function () { hover = true; });
+  t.addEventListener('mouseleave', function () { hover = false; hold(800); });
+  t.addEventListener('wheel', function () { hold(2500); }, { passive: true });
+  t.addEventListener('touchstart', function () { hold(3000); }, { passive: true });
+  t.addEventListener('touchend', function () { hold(2500); }, { passive: true });
+  t.addEventListener('focusin', function () { hold(1e9); });
+  t.addEventListener('focusout', function () { hold(1500); });
+  t.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); step(e.key === 'ArrowRight' ? 1 : -1); } });
+  t.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse' || e.button !== 0) return; drag = { x: e.clientX, s: t.scrollLeft }; moved = false; });
+  window.addEventListener('pointermove', function (e) {
+    if (!drag) return; var dx = e.clientX - drag.x;
+    if (Math.abs(dx) > 4) { moved = true; t.classList.add('dragging'); }
+    t.scrollLeft = drag.s - dx; wrap(); drag.s = t.scrollLeft + dx;
+  });
+  window.addEventListener('pointerup', function () { if (!drag) return; drag = null; hold(2000); setTimeout(function () { t.classList.remove('dragging'); }, 0); });
+  t.addEventListener('click', function (e) { if (moved) { e.preventDefault(); moved = false; } }, true);
+  function step(d) { hold(3000); wrap(); t.scrollBy({ left: d * 230, behavior: 'smooth' }); }
+  document.getElementById('strip-prev').addEventListener('click', function () { step(-1); });
+  document.getElementById('strip-next').addEventListener('click', function () { step(1); });
+  fill(); window.addEventListener('resize', fill);
+  window.addEventListener('load', function () { fill(); t.scrollLeft = 1; pos = 1; });
+  requestAnimationFrame(tick);
+})();
+
+/* Timeline rocket follows the reader and lands on Earth */
+(function () {
+  var tl = document.getElementById('timeline'); if (!tl) return;
+  var track = tl.querySelector('.tl-track'), roles = Array.prototype.slice.call(tl.querySelectorAll('.role'));
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false, burnT = 0;
+  function upd() {
+    ticking = false;
+    var r = track.getBoundingClientRect(), vh = window.innerHeight;
+    var p = Math.max(0, Math.min(1, (vh * 0.5 - r.top) / r.height));
+    track.style.setProperty('--p', p.toFixed(4));
+    track.classList.toggle('landed', p > 0.995);
+    if (!still && p > 0 && p < 0.995) { track.classList.add('moving'); clearTimeout(burnT); burnT = setTimeout(function () { track.classList.remove('moving'); }, 180); } else track.classList.remove('moving');
+    var knobY = r.top + 46 + p * (r.height - 46);
+    roles.forEach(function (el) { el.classList.toggle('passed', el.getBoundingClientRect().top + 34 <= knobY); });
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', req);
+  window.addEventListener('load', upd); upd();
+})();
+
+/* Back to top */
+(function () {
+  var b = document.getElementById('to-top');
+  window.addEventListener('scroll', function () { b.classList.toggle('show', window.scrollY > 700); }, { passive: true });
+  b.addEventListener('click', function () { window.scrollTo({ top: 0 }); });
+})();
+
+/* Carousel dots on phones */
+document.querySelectorAll('.dots').forEach(function (d) {
+  var g = document.getElementById(d.getAttribute('data-for')), tiles = g.querySelectorAll('.tile');
+  tiles.forEach(function () { d.appendChild(document.createElement('i')); });
+  var dots = d.querySelectorAll('i');
+  function upd() {
+    var gl = g.getBoundingClientRect().left, best = 0, bd = 1e9;
+    tiles.forEach(function (t, n) { var dd = Math.abs(t.getBoundingClientRect().left - gl - 20); if (dd < bd) { bd = dd; best = n; } });
+    dots.forEach(function (x, n) { x.classList.toggle('on', n === best); });
+  }
+  g.addEventListener('scroll', upd, { passive: true }); upd();
+});
+
+/* Count up project figures */
+(function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return; io.unobserve(e.target);
+      var node = e.target.firstChild; if (!node || node.nodeType !== 3) return;
+      var txt = node.nodeValue, m = txt.match(/[\d,]+/); if (!m) return;
+      var end = parseInt(m[0].replace(/,/g, ''), 10), t0 = performance.now();
+      (function tick(t) { var k = Math.min(1, (t - t0) / 1100); node.nodeValue = txt.replace(m[0], Math.round(end * (1 - Math.pow(1 - k, 3))).toLocaleString('en-US')); if (k < 1) requestAnimationFrame(tick); })(t0);
+    });
+  }, { threshold: .6 });
+  document.querySelectorAll('.proj .stat').forEach(function (el) { io.observe(el); });
+})();
+
+/* Lightbox */
+(function () {
+  var imgs = Array.prototype.slice.call(document.querySelectorAll('img.zoomable'));
+  var lb = document.getElementById('lb'), im = document.getElementById('lb-img'), cap = document.getElementById('lb-cap'), cnt = document.getElementById('lb-count'), i = 0, last = null;
+  function show(n) {
+    i = (n + imgs.length) % imgs.length; var src = imgs[i]; im.src = src.currentSrc || src.src; im.alt = src.alt;
+    var fc = src.closest('figure') && src.closest('figure').querySelector('figcaption');
+    cap.innerHTML = fc ? fc.innerHTML.replace('</b>', '</b> · ') : ''; cnt.textContent = (i + 1) + ' / ' + imgs.length;
+  }
+  function open(n) { last = document.activeElement; show(n); lb.hidden = false; document.body.style.overflow = 'hidden'; document.getElementById('lb-close').focus(); }
+  function close() { lb.hidden = true; document.body.style.overflow = ''; if (last) last.focus(); }
+  imgs.forEach(function (el, n) {
+    el.tabIndex = 0; el.setAttribute('role', 'button');
+    el.addEventListener('click', function () { open(n); });
+    el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(n); } });
+  });
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.getElementById('lb-prev').addEventListener('click', function () { show(i - 1); });
+  document.getElementById('lb-next').addEventListener('click', function () { show(i + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+  document.addEventListener('keydown', function (e) { if (lb.hidden) return; if (e.key === 'Escape') close(); else if (e.key === 'ArrowRight') show(i + 1); else if (e.key === 'ArrowLeft') show(i - 1); });
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
+})();
+
+/* Mission Concept Review reader */
+(function () {
+  var N = 32, i = 0, last = null, d = document.getElementById('doc'), im = document.getElementById('doc-img'), cnt = document.getElementById('doc-count');
+  function src(n) { return 'mcr-p-' + (n < 9 ? '0' : '') + (n + 1) + '.jpg'; }
+  function show(n) { i = Math.max(0, Math.min(N - 1, n)); im.src = src(i); im.alt = 'Mission Concept Review, page ' + (i + 1); cnt.textContent = 'Page ' + (i + 1) + ' / ' + N; if (i + 1 < N) { var pre = new Image(); pre.src = src(i + 1); } }
+  function open() { last = document.activeElement; show(i); d.hidden = false; document.body.style.overflow = 'hidden'; document.getElementById('doc-close').focus(); }
+  function close() { d.hidden = true; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.getElementById('doc-open').addEventListener('click', open);
+  document.getElementById('doc-close').addEventListener('click', close);
+  document.getElementById('doc-prev').addEventListener('click', function () { show(i - 1); });
+  document.getElementById('doc-next').addEventListener('click', function () { show(i + 1); });
+  im.addEventListener('click', function (e) { var r = im.getBoundingClientRect(); show(i + (e.clientX - r.left > r.width / 2 ? 1 : -1)); });
+  d.addEventListener('click', function (e) { if (e.target === d || e.target.classList.contains('lb-stage')) close(); });
+  document.addEventListener('keydown', function (e) { if (d.hidden) return; if (e.key === 'Escape') close(); else if (e.key === 'ArrowRight') show(i + 1); else if (e.key === 'ArrowLeft') show(i - 1); });
+  var x0 = null;
+  d.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  d.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
+})();
+
+/* Copy email */
+document.getElementById('copy').addEventListener('click', function () {
+  var text = document.getElementById('email').textContent, msg = document.getElementById('copy-msg');
+  function sel() { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = 'Selected. Press Ctrl+C or ⌘C to copy.'; }
+  try { navigator.clipboard.writeText(text).then(function () { msg.textContent = 'Copied to clipboard.'; }, sel); } catch (e) { sel(); }
+});
+</script>
+</body>
+</html>
